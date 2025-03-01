@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Image Gallery</title>
+  <style>
+    /* Reset default margins and padding */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    /* Container for the gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible grid layout */
+      gap: 16px;
+      padding: 20px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    /* Image styling */
+    .gallery img {
+      width: 100%;
+      height: 250px; /* Fixed height to ensure consistency */
+      object-fit: cover; /* Ensures images cover the area while maintaining aspect ratio */
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05); /* Slight zoom effect on hover */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1200px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust column width for larger screens */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust columns for tablets */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust for small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gallery">
+    <img src="Apple.jpg" alt="Image 1">
+    <img src="Banana.jpg" alt="Image 2">
+    <img src="wheat bread.jpg" alt="Image 3">
+    <img src="milk.jpg" alt="Image 4">
+    <img src="spinach.jpg" alt="Image 5">
+    <img src="carrot.jpg" alt="Image 6">
+    <img src="potato.jpg" alt="Image 7">
+  </div>
+
+</body>
+</html>
